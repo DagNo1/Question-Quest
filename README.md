@@ -33,7 +33,7 @@ This revised description emphasizes the personalized exam practice aspect of Que
 
 You can view a live demo of the project [here](#) (if available).
 
-![Project Demo](public/DeskTopLight.png)
+<img src="public/DeskTopLight.png" alt="Project Demo"/>
 
 ## Design
 
