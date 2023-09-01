@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 body{
-  @apply bg-primary text-white
+  @apply bg-netural 
+}
+.txtGradinet {
+  @apply bg-gradient-to-r from-primary to-textGradientEnd bg-clip-text text-transparent;
+}
+.bgGradient {
+  @apply bg-gradient-to-br from-darkGradientStart/10 to-darkBg/40;
 }
