@@ -1,9 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../assets/img/logo.svg";
-import mailIcon from "../../assets/img/icons/email.svg";
-import line from "../../assets/img/other/line.svg";
-import google from "../../assets/img/icons/google.svg";
-import background from "../../assets/img/other/bg_signin.png";
+import logo from "../../assets/logo.svg";
+import mailIcon from "../../assets/icons/email.svg";
+import line from "../../assets/other/line.svg";
+import google from "../../assets/icons/google.svg";
+import background from "../../assets/other/bg_signin.png";
 /*
     The AuthPage component is responsible for rendering a styled authentication page, providing user sign-in or sign-up options.
     Props
