@@ -11,3 +11,8 @@ body{
 .bgGradient {
   @apply bg-gradient-to-br from-darkGradientStart/10 to-darkBg/40;
 }
+.bgBar {
+  background-image: url("../src/assets/img/other/Group 114.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
