@@ -7,7 +7,7 @@ const Home = () => {
     <div className="bg-netural min-w-screen min-h-screen">
       <div className="bgGradient w-full min-h-screen">
         <div className="radial-gradient" />
-        <NavigationBar/>
+        <NavigationBar seeThrough={true}/>
         <Banner />
         <Preview />
       </div>
