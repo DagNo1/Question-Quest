@@ -14,5 +14,3 @@ const SignUp = () => {
   };
   return <AuthPage data={authData} />;
 };
-
-export default SignUp;
