@@ -11,3 +11,22 @@ body{
 .bgGradient {
   @apply bg-gradient-to-br from-darkGradientStart/10 to-darkBg/40;
 }
+.bgBar {
+  background-image: url("../src/assets/other/Group 114.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loaderGradient {
+  @apply bg-gradient-to-r from-purple via-loaderGradientVia/50 to-loaderGradientEnd/50;
+}
+
+.radial-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh; /* Set the height to 50% of the viewport */
+  background-image: radial-gradient(at top, rgba(96, 35, 192, 0.2) 22%, rgba(39,33,48,0.1) 60%);
+  z-index: 1; /* Push the gradient behind other content */
+  pointer-events: none;
+}
