@@ -16,3 +16,6 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+.loaderGradient {
+  @apply bg-gradient-to-r from-purple via-loaderGradientVia/50 to-loaderGradientEnd/50;
+}
