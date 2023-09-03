@@ -1,15 +1,28 @@
 import { useState } from "react";
 import UploadButton from "../../../components/UploadButton";
 import upload from "./../../../assets/icons/upload.svg";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { sendPDF } from "../../../api/sendPDF.js";
 
 const File = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
 
+  const pdfFn = useMutation({
+    mutationKey: "pdf",
+    mutationFn: sendPDF,
+  });
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
     setSelectedFile(file);
+    pdfFn.mutate(formData);
   };
+
+  pdfFn.isLoading && console.log("loading");
+  pdfFn.isSuccess && console.log("success");
 
   const handleDragOver = (event) => {
     event.preventDefault();
@@ -20,7 +33,7 @@ const File = () => {
     event.preventDefault();
     setIsDraggingOver(false);
   };
-  
+
   const handleDrop = (event) => {
     event.preventDefault();
     setIsDraggingOver(false);
@@ -55,8 +68,19 @@ const File = () => {
           <div>Drag a .txt/.pdf file here or click to select one.</div>
         )}
         <img src={upload} className="w-24" />
-        <div className="flex flex-row text-[8px] items-center gap-2 bg-primary w-fit rounded-md border-black border-solid border-[0.1rem]">
-          <input type="file" accept=".txt, .pdf" onChange={handleFileChange} />
+        <div className="flex flex-row text-[8px] items-center gap-2 bg-primary  rounded-md border-black border-solid border-[0.1rem] w-96">
+          <input
+            accept=".txt, .pdf"
+            type="file"
+            class="block w-full text-sm text-slate-500 my-2 mx-4
+  file:mr-4 file:py-2 file:px-4
+  file:rounded-full file:border-0
+  file:text-sm file:font-semibold
+  file:bg-violet-50 file:text-violet-700
+  hover:file:bg-violet-100
+  "
+            onChange={handleFileChange}
+          />
         </div>
         <div className="font-medium max-md:text-[10px]">
           Drag and drop your files to{" "}
